@@ -1,0 +1,56 @@
+#include <iostream>
+
+using namespace std;
+
+double CalculaPercent(int num, int total){
+    double numero = num * 1.0;
+
+    return 100 * (numero/total);
+}
+
+int main(void){
+    int jogadores[23] = {0}, voto = -1, i, indice = 0, maior, total = 0;
+
+    cout << "Digite quem foi o melhor jogador:" << endl;
+
+    while(voto){
+
+        cin >> voto;
+
+        if(voto > 23 || voto < 0){
+        cout << "Numero invalido, por favor digite outro!" << endl;;
+        continue;
+        }
+        if(!voto)
+        break;
+
+        jogadores[voto - 1]++;
+        total++;
+    }
+
+    cout << "Votacao encerrada! Foram computados " << total << " votos." << endl;
+
+    for(i = 0; i < 23; i++){
+
+    if(!i)
+    maior = jogadores[0];
+
+    if(jogadores[i] > maior){
+    maior = jogadores[i];
+    indice = i;
+    }
+    }
+
+    for(i = 0; i < 23; i++){
+        if(!jogadores[i])
+        continue;
+
+        cout << "Jogador    Votos      %" << endl;
+        cout <<  i+1 << "           "<< jogadores[i] << "      "<< CalculaPercent(jogadores[i], total)<<endl;
+    }
+
+    cout << "O vencedor foi o jogador " << indice+1 << " com " << jogadores[indice] << " votos."<<endl;
+
+
+    return 0;
+}
