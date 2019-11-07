@@ -1,0 +1,22 @@
+#include <iostream>
+
+using namespace std;
+
+int main(void){
+    int maior, num, i = 0;
+
+    for(i = 0; num; i++){
+    cin >> num;
+
+    if(!i)
+    maior = num;
+
+    if(num > maior)
+    maior = num;
+
+    }
+
+    cout << "O maior numero digitado foi: " << maior << endl;
+
+    return 0;
+}
