@@ -1,0 +1,56 @@
+#include <iostream>
+#include <cstdlib>
+#include<time.h>
+
+using namespace std;
+
+int main(void){
+    int n, i, num;
+    double um = 0, dois = 0, tres = 0, quatro = 0, cinco = 0, seis = 0;
+
+    srand(time(0));
+
+    cout << "Digite quantas vezes o dado sera lancado:" << endl;
+
+    cin >> n;
+
+    if(!n)
+    return 0;
+
+    for(i = 0; i < n; i++){
+
+        num = rand() % 6 + 1;
+
+        switch(num){
+        case 1:
+            um++;
+        break;
+        case 2:
+            dois++;
+        break;
+        case 3:
+            tres++;
+        break;
+        case 4:
+            quatro++;
+        break;
+        case 5:
+            cinco++;
+        break;
+        case 6:
+            seis++;
+        break;
+
+        }
+
+    }
+
+    cout << "O numero 1 foi lancado " << um << " vezes. Um total de " << (um/n * 100) << "% das vezes." <<endl;
+    cout << "O numero 2 foi lancado " << dois << " vezes. Um total de " << (dois/n * 100) << "% das vezes." <<endl;
+    cout << "O numero 3 foi lancado " << tres << " vezes. Um total de " << (tres/n * 100) << "% das vezes." <<endl;
+    cout << "O numero 4 foi lancado " << quatro << " vezes. Um total de " << (quatro/n * 100) << "% das vezes." <<endl;
+    cout << "O numero 5 foi lancado " << cinco << " vezes. Um total de " << (cinco/n * 100) << "% das vezes." <<endl;
+    cout << "O numero 6 foi lancado " << seis << " vezes. Um total de " << (seis/n * 100) << "% das vezes." <<endl;
+
+    return 0;
+}
