@@ -1,0 +1,30 @@
+#include <iostream>
+#include <cstdlib>
+#include<time.h>
+
+using namespace std;
+
+int main(void){
+    int tentativa = -1, num;
+
+    srand(time(0));
+
+    num = rand() % 100 + 1;
+
+    cout << "Adivinhe um numero entre 0 e 100" << endl;
+
+    while(tentativa != num){
+    cin >> tentativa;
+
+    if(tentativa < num)
+    cout << "Muito baixo. Tente novamente" << endl;
+
+    if(tentativa > num)
+    cout << "Muito alto. Tente novamente" << endl;
+
+    }
+
+    cout << "Parabens. Voce adivinhou o numero" << endl;
+
+    return 0;
+}
